@@ -6,9 +6,6 @@ export const rumahSakit = databaseRSOnline.define(`data`,
         RUMAH_SAKIT: {
             type: DataTypes.STRING
         },
-        KLS_RS: {
-            type: DataTypes.STRING
-        },
         ALAMAT: {
             type: DataTypes.STRING
         },
@@ -26,13 +23,13 @@ export const rumahSakit = databaseRSOnline.define(`data`,
     }
 )
 
-export const propinsi = databaseRSOnline.define(`propinsi`, 
+export const propinsi = databaseRSOnline.define(`provinsi`, 
     {
-        propinsi_kode:  {
+        id:  {
             type: DataTypes.STRING,
             primaryKey: true
         },
-        propinsi_name: {
+        nama: {
             type: DataTypes.STRING
         }
     }
@@ -70,6 +67,9 @@ export const dataRumahSakit = databaseRSOnline.define(`data`,
     },
     kab_kota_id:{
         type: DataTypes.STRING
+    },
+    KLS_RS:{
+        type:DataTypes.INTEGER
     }
 })
 
@@ -96,7 +96,7 @@ export const getData = (data, callback) => {
 }
 
 rumahSakit.hasOne(propinsi, { 
-    foreignKey: 'propinsi_kode',
+    foreignKey: 'id',
     sourceKey: 'provinsi_id',
     as: 'propinsi'
 })

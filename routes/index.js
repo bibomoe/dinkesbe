@@ -129,35 +129,35 @@ router.delete('/apisirs/rllimatitikdua/:id', verifyToken, deleteDataRLLimaTitikD
 router.patch('/apisirs/rllimatitikduadetail/:id', verifyToken, updateDataRLLimaTitikDua)
 
 // DINKES PROVINSI
-router.post('/apisirsadmin/login', loginadmin)
-router.delete('/apisirsadmin/logout', logoutadmin)
-router.get('/apisirsadmin/token', refreshToken)
+router.post('/apisirs/loginadmin', loginadmin)
+router.delete('/apisirs/logoutadmin', logoutadmin)
+router.get('/apisirs/token', refreshToken)
 
 // Get Data Dinkes
 // router.get('/apisirs/apisirsadmin/:id', verifyToken, getDataRumahSakit)
 
 // GET DATA KAB KOTA
-router.get('/apisirsadmin/kabkota', verifyToken, getDataKabKota)
+router.get('/apisirs/kabkota', verifyToken, getDataKabKota)
 
 // GET DATA KABKOTA DINKES KAB
 // router.get('/apisirsadmin/kabkotaid', verifyToken, getDataKabKotabyID)
 
 // GET DATA RS BY KAB KOTA
-router.get('/apisirsadmin/rumahsakit/:kabkotaid', verifyToken, getDataRumahSakitFilterbyKabKotaId)
+router.get('/apisirs/rumahsakit', verifyToken, getDataRumahSakitFilterbyKabKotaId)
 
 // // DINKES KAB/KOTA
 
 // // GET DATA
 
-router.get('/apisirsadmin/rltigatitikempat', verifyToken, getDataRLTigaTitikEmpatKodeRSTahun)
-router.get('/apisirsadmin/rltigatitiklima', verifyToken, getDataRLTigaTitikLimaKodeRSTahun)
-router.get('/apisirsadmin/rllimatitiksatu', verifyToken, getDataRLLimaTitikSatuKodeRSTahun)
-router.get('/apisirsadmin/rllimatitikdua', verifyToken, getDataRLLimaTitikDuaKodeRSTahun)
+router.get('/apisirs/rltigatitikempatadmin', verifyToken, getDataRLTigaTitikEmpatKodeRSTahun)
+router.get('/apisirs/rltigatitiklimaadmin', verifyToken, getDataRLTigaTitikLimaKodeRSTahun)
+router.get('/apisirs/rllimatitiksatuadmin', verifyToken, getDataRLLimaTitikSatuKodeRSTahun)
+router.get('/apisirs/rllimatitikduaadmin', verifyToken, getDataRLLimaTitikDuaKodeRSTahun)
 
 // Validasi Data
-router.get('/apisirsadmin/validasi', verifyToken, getDataValidasiByRsId)
-router.post('/apisirsadmin/validasi', verifyToken, insertValidasi)
-router.patch('/apisirsadmin/validasi/:id', verifyToken, updateValidasi)
-router.get('/apisirsadmin/statusvalidasi', getStatusValidasi)
+router.get('/apisirs/validasi', verifyToken, getDataValidasiByRsId)
+router.post('/apisirs/validasi', verifyToken, insertValidasi)
+router.patch('/apisirs/validasi/:id', verifyToken, updateValidasi)
+router.get('/apisirs/statusvalidasi', getStatusValidasi)
 
 export default router
